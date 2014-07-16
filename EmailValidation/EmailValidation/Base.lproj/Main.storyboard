@@ -34,9 +34,6 @@
                                 <state key="normal" title="ok">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="okAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dem-wZ-yFd"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -51,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="pYw-jy-dfV" id="Umc-e6-L36"/>
+                        <outlet property="okButton" destination="fQs-sL-SPn" id="NCo-fx-o8M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

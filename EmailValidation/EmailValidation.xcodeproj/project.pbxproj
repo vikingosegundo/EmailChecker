@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64B2204F19765E9900991D77 /* EmailFieldIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2204E19765E9900991D77 /* EmailFieldIntention.m */; };
+		64B220521977395C00991D77 /* OKButtonIntention.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B220511977395C00991D77 /* OKButtonIntention.m */; };
 		64FB000219762DB000D7EE02 /* EmailValidationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB000119762DB000D7EE02 /* EmailValidationTests.m */; };
 		64FB000D1976454500D7EE02 /* EmailChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB000C1976454500D7EE02 /* EmailChecker.m */; };
 		64FB00101976459400D7EE02 /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB000F1976459400D7EE02 /* Validator.m */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		64B2204D19765E9900991D77 /* EmailFieldIntention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailFieldIntention.h; sourceTree = "<group>"; };
 		64B2204E19765E9900991D77 /* EmailFieldIntention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailFieldIntention.m; sourceTree = "<group>"; };
+		64B220501977395C00991D77 /* OKButtonIntention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKButtonIntention.h; sourceTree = "<group>"; };
+		64B220511977395C00991D77 /* OKButtonIntention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKButtonIntention.m; sourceTree = "<group>"; };
 		64FB000019762DB000D7EE02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64FB000119762DB000D7EE02 /* EmailValidationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailValidationTests.m; sourceTree = "<group>"; };
 		64FB000B1976454500D7EE02 /* EmailChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailChecker.h; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				64FB000F1976459400D7EE02 /* Validator.m */,
 				64B2204D19765E9900991D77 /* EmailFieldIntention.h */,
 				64B2204E19765E9900991D77 /* EmailFieldIntention.m */,
+				64B220501977395C00991D77 /* OKButtonIntention.h */,
+				64B220511977395C00991D77 /* OKButtonIntention.m */,
 			);
 			path = EmailValidation;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B220521977395C00991D77 /* OKButtonIntention.m in Sources */,
 				64FBFFF119762DB000D7EE02 /* ViewController.m in Sources */,
 				64FBFFEE19762DB000D7EE02 /* AppDelegate.m in Sources */,
 				64FB00101976459400D7EE02 /* Validator.m in Sources */,

@@ -8,12 +8,15 @@
 
 #import "ViewController.h"
 #import "EmailFieldIntention.h"
+#import "OKButtonIntention.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (nonatomic, strong) EmailFieldIntention *emailIntention;
-- (IBAction)okAction:(id)sender;
+@property (nonatomic, strong) OKButtonIntention *okButtonIntention;
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
+
 @end
 
 @implementation ViewController
@@ -33,14 +36,12 @@
             emailField.backgroundColor = [UIColor redColor];
         }
     }];
+    
+    self.okButtonIntention = [[OKButtonIntention alloc] initWithButton:self.okButton
+                                                           actionBlock:^(UIButton *button)
+    {
+        [self.emailField resignFirstResponder];
+    }];
 }
-
-
-
-- (IBAction)okAction:(id)sender
-{
-    [self.emailField resignFirstResponder];
-}
-
 
 @end
