@@ -59,7 +59,7 @@
                     if ([[email substringWithRange:NSMakeRange(scanner.scanLocation, 1)] isEqualToString:@"\""]) {
                         ++numberQuotes;
                     } else {
-                        if (numberQuotes % 2 == 1) {
+                        if (numberQuotes % 2 == 0 || !numberQuotes) {
                             ++numberAtOutsideQuotes;
                         }
                     }
@@ -67,7 +67,7 @@
                 }
             }
             
-            return (numberAtOutsideQuotes > 1)? NO : YES;
+            return (numberAtOutsideQuotes == 1);
         }];
         
         emailValidator = [[Validator alloc] initWithValidationBlock:^BOOL(NSString *email) {
