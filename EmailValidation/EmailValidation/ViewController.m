@@ -7,13 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "EmailChecker.h"
+#import "EmailFieldIntention.h"
 
-
-@interface ViewController ()<UITextFieldDelegate>
+@interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
-
+@property (nonatomic, strong) EmailFieldIntention *emailIntention;
 - (IBAction)okAction:(id)sender;
 @end
 
@@ -21,26 +20,13 @@
             
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self.emailField setAdjustsFontSizeToFitWidth:YES];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.emailField becomeFirstResponder];
+    self.emailIntention = [[EmailFieldIntention alloc] initWithEmailField:self.emailField];
 }
 
 
--(void)textFieldDidEndEditing:(UITextField *)textField
-{
-    
-    BOOL isValidEmail = [EmailChecker checkEmailAddress:textField.text];
-    if (!isValidEmail) {
-        textField.backgroundColor = [UIColor redColor];
-    } else {
-        textField.backgroundColor = [UIColor greenColor];
-    }
-}
+
 - (IBAction)okAction:(id)sender {
     
     [self.emailField resignFirstResponder];
