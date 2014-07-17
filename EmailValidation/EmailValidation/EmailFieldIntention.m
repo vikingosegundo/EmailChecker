@@ -20,23 +20,24 @@
 -(instancetype)initWithEmailField:(id)emailTextField
 {
     return [self initWithEmailField:emailTextField
-                textEnterCompletion:^(BOOL isValid, UITextField *emailField) {
+                textEnterCompletion:^(BOOL isValid, UITextField *emailField)
+            {
+                if (!isValid) {
+                    emailField.backgroundColor = [UIColor redColor];
+                } else {
+                    emailField.backgroundColor = [UIColor greenColor];
+                }
 
-                    if (!isValid) {
-                            emailField.backgroundColor = [UIColor redColor];
-                        } else {
-                            emailField.backgroundColor = [UIColor greenColor];
-                        }
-
-                }];
+            }];
 }
 
 -(instancetype)initWithEmailField:(UITextField *)emailTextField
               textEnterCompletion:(void (^)(BOOL isValid, UITextField *emailField))completionBlock
 {
     return [self initWithEmailField:emailTextField
-                        textChanged:^(NSString *text, UITextField *emailField){
-                            emailTextField.backgroundColor = [UIColor whiteColor    ];
+                        textChanged:^(NSString *text, UITextField *emailField)
+                        {
+                            emailTextField.backgroundColor = [UIColor whiteColor];
                         }
                 textEnterCompletion:completionBlock];
 }
@@ -45,15 +46,15 @@
                       textChanged:(void (^)(NSString *text, UITextField *emailField))changeBlock
               textEnterCompletion:(void (^)(BOOL, UITextField *))completionBlock
 {
-
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         self.emailTextField = emailTextField;
         self.completionBlock = completionBlock;
         self.textChangedBlock = changeBlock;
         self.emailTextField.delegate = self;
+        [self.emailTextField addTarget:self
+                                action:@selector(textChanged:)
+                      forControlEvents:UIControlEventEditingChanged];
     }
-    
     return self;
 }
 
@@ -65,11 +66,10 @@
     }
 }
 
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    self.textChangedBlock(string, textField);
-    return YES;
-}
 
+-(void)textChanged:(UITextField *)textField
+{
+    self.textChangedBlock(textField.text, textField);
+}
 
 @end
