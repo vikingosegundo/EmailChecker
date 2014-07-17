@@ -17,6 +17,7 @@
 @end
 
 @implementation EmailFieldIntention
+
 -(instancetype)initWithEmailField:(id)emailTextField
 {
     return [self initWithEmailField:emailTextField

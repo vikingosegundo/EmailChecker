@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OKButtonIntention : NSObject
+
 -(instancetype)initWithButton:(UIButton *)button
                   actionBlock:(void(^)(UIButton *button)) actionBlock;
 @end

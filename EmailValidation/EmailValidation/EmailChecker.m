@@ -9,6 +9,7 @@
 #import "EmailChecker.h"
 
 @implementation EmailChecker
+
 +(BOOL)checkEmailAddress:(NSString *)address
 {
     
@@ -87,12 +88,9 @@
                 }
             }];
             return isValidAdress;
-        }];
-        
-        
+        }];        
     }
-    
     return [emailValidator isValidAddress:address];
-
 }
+
 @end

@@ -14,6 +14,7 @@
 @end
 
 @implementation OKButtonIntention
+
 -(instancetype)initWithButton:(UIButton *)button actionBlock:(void (^)(UIButton *))actionBlock
 {
     if (self = [super init]) {

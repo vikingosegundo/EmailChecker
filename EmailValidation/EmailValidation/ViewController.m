@@ -13,9 +13,9 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (nonatomic, strong) EmailFieldIntention *emailIntention;
 @property (nonatomic, strong) OKButtonIntention *okButtonIntention;
-@property (weak, nonatomic) IBOutlet UIButton *okButton;
 
 @end
 
