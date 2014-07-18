@@ -28,13 +28,9 @@
     self.emailIntention = [[EmailFieldIntention alloc] initWithEmailField:self.emailField
                                                       textEnterCompletion:^(BOOL isValid, UITextField *emailField, NSString *text)
     {
-        if (isValid) {
-            NSLog(@"valid: %@", text);
-            emailField.backgroundColor = [UIColor greenColor];
-        } else {
-            NSLog(@"invalid: %@", text);
-            emailField.backgroundColor = [UIColor redColor];
-        }
+        
+        emailField.backgroundColor = (isValid) ? [UIColor greenColor] : [UIColor redColor];
+        NSLog(@"%@: %@", (isValid) ? @"valid" : @"invalid", text);
     }];
     
     self.okButtonIntention = [[OKButtonIntention alloc] initWithButton:self.okButton

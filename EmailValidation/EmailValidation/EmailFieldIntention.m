@@ -23,12 +23,7 @@
     return [self initWithEmailField:emailTextField
                 textEnterCompletion:^(BOOL isValid, UITextField *emailField, NSString *text)
             {
-                if (!isValid) {
-                    emailField.backgroundColor = [UIColor redColor];
-                } else {
-                    emailField.backgroundColor = [UIColor greenColor];
-                }
-
+                emailField.backgroundColor = (isValid) ? [UIColor greenColor] : [UIColor redColor];
             }];
 }
 
