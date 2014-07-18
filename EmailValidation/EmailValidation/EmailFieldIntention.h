@@ -12,10 +12,10 @@
 -(instancetype)initWithEmailField:(UITextField *)emailTextField;
 
 -(instancetype)initWithEmailField:(UITextField *)emailTextField
-              textEnterCompletion:(void(^)(BOOL isValid, UITextField *emailField)) completionBlock;
+              textEnterCompletion:(void(^)(BOOL isValid, UITextField *emailField, NSString *text)) completionBlock;
 
 -(instancetype)initWithEmailField:(UITextField *)emailTextField
                       textChanged:(void(^)(NSString *text, UITextField *emailField)) changeBlock
-              textEnterCompletion:(void(^)(BOOL isValid, UITextField *emailField)) completionBlock;
+              textEnterCompletion:(void(^)(BOOL isValid, UITextField *emailField, NSString *text)) completionBlock;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface EmailFieldIntention () <UITextFieldDelegate>
 @property (nonatomic, weak) UITextField *emailTextField;
-@property (nonatomic, copy) void(^completionBlock)(BOOL isValid, UITextField *emailfield);
+@property (nonatomic, copy) void(^completionBlock)(BOOL isValid, UITextField *emailfield, NSString *text);
 @property (nonatomic, copy) void(^textChangedBlock)(NSString *text, UITextField *emailfield);
 
 @end
@@ -21,7 +21,7 @@
 -(instancetype)initWithEmailField:(id)emailTextField
 {
     return [self initWithEmailField:emailTextField
-                textEnterCompletion:^(BOOL isValid, UITextField *emailField)
+                textEnterCompletion:^(BOOL isValid, UITextField *emailField, NSString *text)
             {
                 if (!isValid) {
                     emailField.backgroundColor = [UIColor redColor];
@@ -33,7 +33,7 @@
 }
 
 -(instancetype)initWithEmailField:(UITextField *)emailTextField
-              textEnterCompletion:(void (^)(BOOL isValid, UITextField *emailField))completionBlock
+              textEnterCompletion:(void (^)(BOOL isValid, UITextField *emailField, NSString *text))completionBlock
 {
     return [self initWithEmailField:emailTextField
                         textChanged:^(NSString *text, UITextField *emailField)
@@ -45,7 +45,7 @@
 
 -(instancetype)initWithEmailField:(UITextField *)emailTextField
                       textChanged:(void (^)(NSString *text, UITextField *emailField))changeBlock
-              textEnterCompletion:(void (^)(BOOL, UITextField *))completionBlock
+              textEnterCompletion:(void (^)(BOOL, UITextField *, NSString *text))completionBlock
 {
     if (self = [super init]) {
         self.emailTextField = emailTextField;
@@ -63,7 +63,7 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     if (self.completionBlock) {
-        self.completionBlock([EmailChecker checkEmailAddress:textField.text], textField);
+        self.completionBlock([EmailChecker checkEmailAddress:textField.text], textField, textField.text);
     }
 }
 

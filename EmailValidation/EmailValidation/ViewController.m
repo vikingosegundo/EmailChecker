@@ -26,13 +26,13 @@
     [self.emailField setAdjustsFontSizeToFitWidth:YES];
     [self.emailField becomeFirstResponder];
     self.emailIntention = [[EmailFieldIntention alloc] initWithEmailField:self.emailField
-                                                      textEnterCompletion:^(BOOL isValid, UITextField *emailField)
+                                                      textEnterCompletion:^(BOOL isValid, UITextField *emailField, NSString *text)
     {
         if (isValid) {
-            NSLog(@"valid: %@", emailField.text);
+            NSLog(@"valid: %@", text);
             emailField.backgroundColor = [UIColor greenColor];
         } else {
-            NSLog(@"invalid: %@", emailField.text);
+            NSLog(@"invalid: %@", text);
             emailField.backgroundColor = [UIColor redColor];
         }
     }];
